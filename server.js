@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
     // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    // Disable caching so we'll always get the latest comments.
+    // Disable caching.
     res.setHeader('Cache-Control', 'no-cache');
     next();
 });
@@ -39,7 +39,7 @@ app.get('/api/cooridnates', function(req, res) {
     });
 });
 
-app.post('/api/comordinates', function(req, res) {
+app.post('/api/coordinates', function(req, res) {
     fs.readFile(COORDINATES_FILE, function(err, data) {
         if (err) {
             console.error(err);

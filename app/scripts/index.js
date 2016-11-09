@@ -15,12 +15,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-import CommentBox from './commentBox';
-
 import '../css/base.css';
 
+$( "canvas" ).click(function( event ) {
+  var pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
+  var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
+  $( "span #first" ).text( "( event.pageX, event.pageY ) : " + pageCoords );
+  $( "span #last" ).text( "( event.clientX, event.clientY ) : " + clientCoords );
+});
+
+/*
 ReactDOM.render(
   <CommentBox url="/api/coordinates" pollInterval={2000} />,
   document.getElementById('content')
 );
+*/
